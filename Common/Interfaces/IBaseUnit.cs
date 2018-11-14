@@ -9,6 +9,6 @@ namespace Common.Interfaces
         string Name { get; set; }
         double Speed { get; set; }
 
-        Task Move(double x, double y);
+        Task Move(Coordinates x, Coordinates y);
     }
 }

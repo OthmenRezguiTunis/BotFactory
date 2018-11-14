@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Models
@@ -26,6 +27,7 @@ namespace Models
 
         public virtual async Task WorkBegins()
         {
+            await Task.Run(() => Thread.Sleep(2000));
             this.CurrentPos.X = this.WorkingPos.X;
             this.CurrentPos.Y = this.WorkingPos.Y;
 
@@ -35,6 +37,7 @@ namespace Models
 
         public virtual async Task WorkEnds()
         {
+            await Task.Run(() => Thread.Sleep(2000));
             this.CurrentPos.X = this.ParkingPos.X;
             this.CurrentPos.Y = this.ParkingPos.Y;
 

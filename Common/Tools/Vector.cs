@@ -20,9 +20,9 @@ namespace BotFactory.Common.Tools
 
         }
 
-        public double Length()
+        public  double Length()
         {
-            return Math.Sqrt((this.X*this.X) + (this.Y* this.Y ));
+            return Math.Sqrt(Math.Pow(this.X, 2) + Math.Pow(this.Y, 2));
 
         }
     }

@@ -11,17 +11,17 @@ namespace Factory
 {
     public class UnitFactory : IUnitFactory
     {
-        public int QueueCapacity { get; set; }
+        private int QueueCapacity { get; set; }
 
-        public int StorageCapacity { get; set; }
+        private int StorageCapacity { get; set; }
 
-        public Queue<FactoryQueueElement> FactoryQueue { get; set; }
+        public Queue<IFactoryQueueElement> FactoryQueue { get; set; }
 
        public List<ITestingUnit> Storage { get; set; }
 
         public UnitFactory(int queuecapacity , int storagecapacity)
         {
-            this.FactoryQueue = new Queue<FactoryQueueElement>();
+            this.FactoryQueue = new Queue<IFactoryQueueElement>();
             this.QueueCapacity = queuecapacity;
             this.StorageCapacity = storagecapacity;
         }

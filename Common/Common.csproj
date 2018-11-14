@@ -42,9 +42,11 @@
   <ItemGroup>
     <Compile Include="Interfaces\IBaseUnit.cs" />
     <Compile Include="Interfaces\IBuildableUnit.cs" />
+    <Compile Include="Interfaces\IFactoryQueueElement.cs" />
     <Compile Include="Interfaces\IReportingUnit.cs" />
     <Compile Include="Interfaces\IStatusChangedEventArgs.cs" />
     <Compile Include="Interfaces\ITestingUnit.cs" />
+    <Compile Include="Interfaces\IUnitFactory.cs" />
     <Compile Include="Interfaces\IWorkingUnit.cs" />
     <Compile Include="Tools\Coordinates .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

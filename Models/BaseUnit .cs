@@ -31,13 +31,20 @@ namespace Models
         }
 
 
-        public async Task Move (double x , double y )
+        public async Task<bool> Move(Coordinates beginpos , Coordinates endpos )
         {
+            if (endpos.Equals(beginpos))
+            {
+                var vect = Vector.FromCoordinates(beginpos, endpos);
+                int temps = (int)(vect.Length()/ this.Speed);
+                await Task.Run(() => Thread.Sleep(temps));
+                this.CurrentPos.X = endpos.X;
+                this.CurrentPos.X = endpos.Y;
+                return true;
+            }
 
-            int temps = (int)(Math.Abs(x - y) / this.Speed);
-            await Task.Run(()=>Thread.Sleep(temps));
-            this.CurrentPos.X = x;
-            this.CurrentPos.X = y;
+            else
+                return false; 
 
 
         }

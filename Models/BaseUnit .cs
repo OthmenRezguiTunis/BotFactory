@@ -36,7 +36,7 @@ namespace Models
             if (endpos.Equals(beginpos))
             {
                 var vect = Vector.FromCoordinates(beginpos, endpos);
-                int temps = (int)(vect.Length()/ this.Speed);
+                int temps = (int)(vect.Length() / this.Speed);
                 await Task.Run(() => Thread.Sleep(temps));
                 this.CurrentPos.X = endpos.X;
                 this.CurrentPos.X = endpos.Y;
@@ -44,7 +44,9 @@ namespace Models
             }
 
             else
-                return false; 
+            {
+                return false;
+            }
 
 
         }

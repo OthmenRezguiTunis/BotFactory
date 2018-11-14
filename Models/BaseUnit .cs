@@ -35,7 +35,7 @@ namespace Models
         {
 
             int temps = (int)(Math.Abs(x - y) / this.Speed);
-            Thread.Sleep(temps);
+            await Task.Run(()=>Thread.Sleep(temps));
             this.CurrentPos.X = x;
             this.CurrentPos.X = y;
 

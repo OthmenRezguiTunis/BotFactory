@@ -30,14 +30,14 @@ namespace Factory
         {
             Object lockThis = new Object();
 
-            if (FactoryQueue.Count() > StorageCapacity || FactoryQueue.Count() > QueueCapacity)
+            if (Storage.Count() > StorageCapacity || FactoryQueue.Count() > QueueCapacity)
             {
                 return false;
             }
 
             lock (lockThis)
             {
-              
+             
                 FactoryQueue.Enqueue(new FactoryQueueElement { Name = Name, Model = Model, WorkingPos = WorkingPos, ParkingPos = ParkingPos });
                 return true;
             }

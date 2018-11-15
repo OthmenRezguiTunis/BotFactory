@@ -16,7 +16,6 @@ namespace Models
             this.Speed = _vitesse;
             this.BuildTime = _tempsconstruction;
 
-
         }
     }
 }

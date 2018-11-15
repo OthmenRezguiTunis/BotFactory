@@ -27,7 +27,10 @@ namespace Models
 
         public virtual async Task WorkBegins()
         {
-            this.IsWorking = await this.Move(this.CurrentPos, this.WorkingPos);
+            var result = await this.Move(this.CurrentPos, this.WorkingPos);
+            this.CurrentPos.X = this.WorkingPos.X;
+            this.CurrentPos.Y = this.WorkingPos.Y;
+            this.IsWorking = true;
 
 
         }
@@ -35,7 +38,10 @@ namespace Models
 
         public virtual async Task WorkEnds()
         {
-            this.IsWorking = await this.Move(this.CurrentPos, this.ParkingPos);
+            var result = await this.Move(this.CurrentPos, this.WorkingPos);
+            this.CurrentPos.X = this.ParkingPos.X;
+            this.CurrentPos.Y = this.ParkingPos.Y;
+            this.IsWorking = false;
 
         }
     }

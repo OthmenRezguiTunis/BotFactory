@@ -19,7 +19,7 @@ namespace Factories
         {
             get
             {
-                return Storage.Count() - StorageCapacity; 
+                return   StorageCapacity - Storage.Count(); 
             } 
 
             set
@@ -33,7 +33,7 @@ namespace Factories
         {
             get
             {
-                return Queue.Count() - QueueCapacity;
+                return QueueCapacity - Queue.Count() ;
             }
 
             set

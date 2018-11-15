@@ -65,7 +65,7 @@ namespace Factories
         {
             Object lockThis = new Object();
 
-            if (Storage.Count() > StorageCapacity || Queue.Count() > QueueCapacity)
+            if (Storage.Count() >= StorageCapacity || Queue.Count() >= QueueCapacity)
             {
                 return false;
             }

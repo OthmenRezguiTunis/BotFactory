@@ -7,22 +7,56 @@ using BotFactory.Common;
 using Common.Interfaces;
 using BotFactory.Common.Tools;
 
-namespace Factory
+namespace Factories
 {
     public class UnitFactory : IUnitFactory
     {
-        private int QueueCapacity { get; set; }
+        public int QueueCapacity { get; set; }
 
-        private int StorageCapacity { get; set; }
+        public int StorageCapacity { get; set; }
 
-        public Queue<IFactoryQueueElement> FactoryQueue { get; set; }
+        public int  QueueFreeSlots
+        {
+            get
+            {
+                return Storage.Count() - StorageCapacity; 
+            } 
+
+            set
+            {
+
+            }
+
+        }
+
+        public int StorageFreeSlots
+        {
+            get
+            {
+                return Queue.Count() - QueueCapacity;
+            }
+
+            set
+            {
+
+            }
+
+        }
+
+        public Queue<IFactoryQueueElement> Queue { get; set; }
 
        public List<ITestingUnit> Storage { get; set; }
+
+        public TimeSpan QueueTime { get; set; }
+
+
+        public Action<object, EventArgs> FactoryStatus { get; set; }
+       
 
         public UnitFactory(int queuecapacity , int storagecapacity)
         {
             this.Storage = new List<ITestingUnit>();
-            this.FactoryQueue = new Queue<IFactoryQueueElement>();
+            this.Queue = new Queue<IFactoryQueueElement>();
             this.QueueCapacity = queuecapacity;
             this.StorageCapacity = storagecapacity;
         }
@@ -31,7 +65,7 @@ namespace Factory
         {
             Object lockThis = new Object();
 
-            if (Storage.Count() > StorageCapacity || FactoryQueue.Count() > QueueCapacity)
+            if (Storage.Count() > StorageCapacity || Queue.Count() > QueueCapacity)
             {
                 return false;
             }
@@ -39,7 +73,7 @@ namespace Factory
             lock (lockThis)
             {
              
-                FactoryQueue.Enqueue(new FactoryQueueElement { Name = Name, Model = Model, WorkingPos = WorkingPos, ParkingPos = ParkingPos });
+                Queue.Enqueue(new FactoryQueueElement { Name = Name, Model = Model, WorkingPos = WorkingPos, ParkingPos = ParkingPos });
                 return true;
             }
            

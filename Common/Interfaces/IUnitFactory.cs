@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using BotFactory.Common.Tools;
 using Common.Interfaces;
 
-namespace Factory
+namespace Common.Interfaces
 {
     public interface IUnitFactory
     {
-        Queue<IFactoryQueueElement> FactoryQueue { get; set; }
+        Queue<IFactoryQueueElement> Queue { get; set; }
      
         List<ITestingUnit> Storage { get; set; }
-     
+
+         int QueueCapacity { get; set; }
+
+         int StorageCapacity { get; set; }
+
+        int QueueFreeSlots { get; set; }
+
+
+        int StorageFreeSlots { get; set; }
+        TimeSpan QueueTime { get; set; }
+        Action<object, EventArgs> FactoryStatus { get; set; }
 
         bool AddWorkableUnitToQueue(string Name, Type Model, Coordinates WorkingPos, Coordinates ParkingPos);
     }

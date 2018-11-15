@@ -1,6 +1,0 @@
-C:\Projects\BotFactory\BotFactory\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
-C:\Projects\BotFactory\BotFactory\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-C:\Projects\BotFactory\BotFactory\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Projects\BotFactory\BotFactory\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-C:\Projects\BotFactory\BotFactory\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
-C:\Projects\BotFactory\BotFactory\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache

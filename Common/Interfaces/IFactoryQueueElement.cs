@@ -1,7 +1,7 @@
 ﻿using System;
 using BotFactory.Common.Tools;
 
-namespace Factory
+namespace Common.Interfaces
 {
     public interface IFactoryQueueElement
     {

@@ -10,10 +10,10 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int a = 10;
-            int? b = 20;
-            int? c = null;
-            Console.WriteLine(a+c ?? b);
+            string[] colors = new string[]{ "a", "b" };
+            //var lis = new List<string>(){colors};
+         
+
 
         }
     }

@@ -27,9 +27,7 @@ namespace Models
 
         public virtual async Task WorkBegins()
         {
-            await Task.Run(() => Thread.Sleep(2000));
-            this.CurrentPos.X = this.WorkingPos.X;
-            this.CurrentPos.Y = this.WorkingPos.Y;
+            this.IsWorking = await this.Move(this.CurrentPos, this.WorkingPos);
 
 
         }
@@ -37,9 +35,7 @@ namespace Models
 
         public virtual async Task WorkEnds()
         {
-            await Task.Run(() => Thread.Sleep(2000));
-            this.CurrentPos.X = this.ParkingPos.X;
-            this.CurrentPos.Y = this.ParkingPos.Y;
+            this.IsWorking = await this.Move(this.CurrentPos, this.ParkingPos);
 
         }
     }

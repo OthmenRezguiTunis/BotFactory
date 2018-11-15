@@ -10,30 +10,28 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.Write(Bar.Instance + "Oops ");
+            int a = 10;
+            int? b = 20;
+            int? c = null;
+            Console.WriteLine(a+c ?? b);
 
         }
     }
-    public abstract class Foo
+    public  class A
     {
-        static Foo()
+     public virtual  void M()
         {
-            Console.Write("constructeur FOO ");
+            Console.Write("constructeur A ");
         }
-        public static string Instance;
-
-        public static void SetInstance(string ins)
-        {
-            Instance = ins;
-        }
+     
     }
 
-    public class Bar : Foo
+    public class B : A
     {
-        static Bar()
+       public override void M()
         {
-            Console.Write("constructeur Bar ");
-            SetInstance("helo word ");
+            Console.Write("constructeur fils ");
+            
         }
     }
 

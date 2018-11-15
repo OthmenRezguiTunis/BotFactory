@@ -21,6 +21,7 @@ namespace Factory
 
         public UnitFactory(int queuecapacity , int storagecapacity)
         {
+            this.Storage = new List<ITestingUnit>();
             this.FactoryQueue = new Queue<IFactoryQueueElement>();
             this.QueueCapacity = queuecapacity;
             this.StorageCapacity = storagecapacity;

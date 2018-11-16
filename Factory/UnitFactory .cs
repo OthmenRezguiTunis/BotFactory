@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BotFactory.Common;
 using Common.Interfaces;
 using BotFactory.Common.Tools;
+using Models;
 
 namespace Factories
 {
@@ -74,6 +75,9 @@ namespace Factories
             {
             
                 Queue.Enqueue(new FactoryQueueElement { Name = Name, Model = Model, WorkingPos = WorkingPos, ParkingPos = ParkingPos });
+                ITestingUnit instance = (ITestingUnit)Activator.CreateInstance(Model);
+                Storage.Add(instance);
+                QueueTime += TimeSpan.FromSeconds(instance.BuildTime);
                 return true;
             }
            

@@ -23,15 +23,15 @@ namespace BotFactory.Tools
             {
                 if (_ibot != null)
                 {
-                    //    _ibot.UnitStatusChanged -= _ibot_UnitStatusChanged;
-                    //}
-                    SetField(ref _ibot, value, nameof(IBot));
-                    //_ibot.UnitStatusChanged += _ibot_UnitStatusChanged;
-                    Reports.Clear();
+                    _ibot.UnitStatusChanged -= _ibot_UnitStatusChanged;
+                }
+                SetField(ref _ibot, value, nameof(IBot));
+                _ibot.UnitStatusChanged += _ibot_UnitStatusChanged;
+                Reports.Clear();
                     ForceUpdate();
                 }
             }
-        }
+        
 
         public ObservableCollection<String> Reports
         {
@@ -46,7 +46,7 @@ namespace BotFactory.Tools
             }
         }
 
-        private void _ibot_UnitStatusChanged(object sender, EventArgs e)
+        private void _ibot_UnitStatusChanged(object sender, IStatusChangedEventArgs e)
         {
             Reports.Add(((IStatusChangedEventArgs)e).NewStatus);
         }

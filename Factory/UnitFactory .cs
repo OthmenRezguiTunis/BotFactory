@@ -72,7 +72,7 @@ namespace Factories
 
             lock (lockThis)
             {
-             
+            
                 Queue.Enqueue(new FactoryQueueElement { Name = Name, Model = Model, WorkingPos = WorkingPos, ParkingPos = ParkingPos });
                 return true;
             }

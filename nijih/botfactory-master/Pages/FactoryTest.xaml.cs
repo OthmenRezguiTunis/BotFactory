@@ -2,7 +2,9 @@
 using BotFactory.Tools;
 using Common.Interfaces;
 using Factories;
+using Models;
 using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace BotFactory.Pages
@@ -34,10 +36,22 @@ namespace BotFactory.Pages
         {
             if (ModelsList.SelectedIndex >= 0 && !String.IsNullOrEmpty(UnitName.Text))
             {
+
                 Type item = (Type)ModelsList.SelectedItem;
                 var name = UnitName.Text;
-                _dataContext.Builder.AddWorkableUnitToQueue( name, item, new Coordinates(0, 0), new Coordinates(10, 10));
-                _dataContext.ForceUpdate();
+                WorkingUnit instance = (WorkingUnit)Activator.CreateInstance(item);
+                MessageBoxResult result = MessageBox.Show("You Chose: to build a robot with the type " + item.Name + " named " + name + " the buildtime is about "+ instance .BuildTime+ " Are you sure ", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    _dataContext.Builder.AddWorkableUnitToQueue(name, item, new Coordinates(0, 0), new Coordinates(10, 10));
+                    _dataContext.ForceUpdate();
+                }
+                else
+                {
+                    //do nothing 
+                    return;
+                }
+
             }
         }
         private void UpdateButtonValidity()

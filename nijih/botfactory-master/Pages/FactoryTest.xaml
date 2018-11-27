@@ -90,6 +90,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             
+
            
                 <Grid>
                     <StackPanel Margin="10">
@@ -106,6 +107,28 @@
                     </StackPanel>
                 </Grid>
            
+
+            <!--<ListView Name="ModelsList" Grid.Row="0" ItemsSource="{Binding Models}" SelectionMode="Single" SelectionChanged="ModelsList_SelectionChanged">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.ColumnSpan="2" BorderBrush="Blue" BorderThickness="1"/>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Model : "/>
+                            <Label Grid.Column="1" Grid.Row="0" Content="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
 
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <Label Content="Unit name : "/>

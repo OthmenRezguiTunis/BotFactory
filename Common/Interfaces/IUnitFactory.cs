@@ -15,10 +15,16 @@ namespace Common.Interfaces
 
          int StorageCapacity { get; set; }
 
+
         int QueueFreeSlots { get; }
 
 
         int StorageFreeSlots { get;}
+
+
+
+
+
         TimeSpan QueueTime { get; set; }
         Action<object, EventArgs> FactoryStatus { get; set; }
 

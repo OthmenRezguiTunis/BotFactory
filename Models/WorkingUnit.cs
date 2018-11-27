@@ -23,6 +23,8 @@ namespace Models
         }
 
 
+
+
         public virtual async Task<bool> WorkBegins()
         {
             var result = await this.Move(this.CurrentPos, this.WorkingPos);

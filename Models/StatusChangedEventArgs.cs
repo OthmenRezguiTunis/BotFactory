@@ -11,5 +11,11 @@ namespace Models
    public class StatusChangedEventArgs : EventArgs, IStatusChangedEventArgs
     {
         public string NewStatus{  get; set; }
+
+
+        public StatusChangedEventArgs(string status)
+        {
+            this.NewStatus = status;
+        }
     }
 }

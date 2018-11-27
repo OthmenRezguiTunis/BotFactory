@@ -18,5 +18,18 @@ namespace Models
         {
             UnitStatusChanged?.Invoke(this, e);
         }
+
+        public ReportingUnit(double buildtime):base(buildtime)
+        {
+
+        }
+
+        public ReportingUnit() 
+        {
+
+        }
+
+
+
     }
 }

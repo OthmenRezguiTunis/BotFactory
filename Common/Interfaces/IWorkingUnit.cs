@@ -9,7 +9,7 @@ namespace Common.Interfaces
         Coordinates ParkingPos { get; set; }
         Coordinates WorkingPos { get; set; }
 
-        Task WorkBegins();
-        Task WorkEnds();
+        Task<bool> WorkBegins();
+        Task<bool> WorkEnds();
     }
 }

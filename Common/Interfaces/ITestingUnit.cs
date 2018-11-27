@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Common.Interfaces
 {
-  public  interface ITestingUnit : IBaseUnit , IBuildableUnit, IReportingUnit , IStatusChangedEventArgs
+  public  interface ITestingUnit : IBaseUnit , IBuildableUnit, IReportingUnit  , IWorkingUnit 
     {
 
-
+  
     }
 }

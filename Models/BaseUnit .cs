@@ -11,7 +11,7 @@ using Common.Interfaces;
 
 namespace Models
 {
-   public abstract class BaseUnit : BuildableUnit, IBaseUnit
+   public abstract class BaseUnit : ReportingUnit, IBaseUnit
     {
         public double Speed { get; set; }
 
@@ -19,8 +19,9 @@ namespace Models
 
         public Coordinates CurrentPos { get; set; }
 
-        public BaseUnit(string Name) 
+        public BaseUnit(string Name, double Speed = 1) 
         {
+            this.Speed = Speed;
             this.Name = Name;
         }
         public BaseUnit( string Name, double buildtime, double Speed = 1) : base(buildtime)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Wall_E : WorkingUnit
+    public class Wall_E : WorkingUnit , ITestingUnit
     {
         public readonly double _vitesse = 2;
         public readonly double _tempsconstruction = 4;
